@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CaPiTaLiZe EVeRy OThEr LEtTeR</title>
+<script>
+capitalizeEveryOtherLetter = () => {
+	const inputElement = document.querySelector("#input");
+	const outputElement = document.querySelector("#output");
+	
+	const input = inputElement.value.replace(' ', '');	
+    let output = '';
+	
+    for (var i = 0; i < input.length; i++) {
+		const character = input.charAt(i);		
+		output += i % 2 === 0 ? character.toUpperCase() : character.toLowerCase();
+	}	
+	
+	if (!outputElement.textContent) {		
+		const textNode = document.createTextNode(output);
+		outputElement.appendChild(textNode);
+	} else {
+		outputElement.textContent = output;
+	}
+}
+
+	
+</script>
+</head>
+
+<body>
+<h1>CaPiTaLiZeR</h1>
+<input id="input">
+<button class="plus" onclick="capitalizeEveryOtherLetter()">CaPiTaLiZe!</button>
+<div id="output"></div>
+</body>
+
+</html>
